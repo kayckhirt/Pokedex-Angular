@@ -1,0 +1,41 @@
+<div class="center-on-page" *ngIf="loading">
+  <div class="pokeball">
+    <div class="pokeball__button"></div>
+  </div>
+</div>
+<main>
+  <poke-header></poke-header>
+  <ng-template [ngIf]="isLoading">
+  <section class="pokemon__name">
+    <h1 class="slideInRight" [ngClass]="getTypeClass(pokemon[0].types[0].type.name)">{{pokemon[0].name}}</h1>
+  </section>
+  <section class="pokemon__status">
+    <img class="slideInDown"
+    [src]="pokemon[0].sprites.other.dream_world.front_default" [alt]="pokemon[0].name"
+    >
+    <article class="pokemon__status__statistics">
+      <section>
+        <h3>Estatísticas</h3>
+          <ul>
+            <li *ngFor="let stat of pokemon[0].stats">
+              {{stat.stat.name}}
+              <strong>
+                {{stat.base_stat}}
+              </strong>
+            </li>
+          </ul>
+      </section>
+      <section class="description">
+        {{pokemon[1].flavor_text_entries[0].flavor_text | normalizeText}}
+      </section>
+      <a [routerLink]="['']" class="btn btn__secondary">
+        Voltar para Pokedex
+      </a>
+    </article>
+  </section>
+  </ng-template>
+  <img src="../../../assets/pokedexFail.svg" 
+  alt="Erro api fora do ar" 
+  width="100%"
+  *ngIf="apiError">
+</main>
