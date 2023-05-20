@@ -99,6 +99,7 @@ body {
         text-shadow: 1px 1px black;
         background-position: top;
         background-size: contain;
+        border-radius: rem-calc(30);
       }
       .grass-type {
         background-image: url('../../../assets/background-pokemon/grass.gif');
@@ -146,10 +147,13 @@ body {
         background-image: url('../../../assets/background-pokemon/ghost.gif');
       }
       .dragon-type{
-      background-image: url('../../../assets/background-pokemon/dragon-unscreen.gif');
-      background-repeat: round;
-      background-size: cover;
-      background-position: top;
+        background-image: url('../../../assets/background-pokemon/dragon-unscreen.gif');
+        background-repeat: round;
+        background-size: cover;
+        background-position: top;
+      }
+      .ice-type{
+        background-image: url('../../../assets/background-pokemon/ice.gif');
       }
       
     }

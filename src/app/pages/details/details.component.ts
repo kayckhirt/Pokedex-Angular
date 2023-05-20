@@ -79,6 +79,8 @@ export class DetailsComponent {
           return 'ghost-type';
       case 'dragon':
           return 'dragon-type'
+      case 'ice':
+          return 'ice-type';
       default:
         return 'normal-type';
     }
