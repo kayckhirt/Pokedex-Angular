@@ -35,14 +35,12 @@ export class DetailsComponent {
 
   public getPokemon() {
     const id = this.activatedRoute.snapshot.params['id'];
-    console.log(this.pokemon)
     const pokemon = this.pokeApiService.apiGetPokemon(`${this.urlPokemonId}/${id}`)
     const name = this.pokeApiService.apiGetPokemon(`${this.urlPokemonName}/${id}`)
 
     return forkJoin([pokemon, name]).subscribe(
       res => {
         this.pokemon = res;
-        console.log(res)
         this.isLoading = true;
         this.loading = false;
       },
