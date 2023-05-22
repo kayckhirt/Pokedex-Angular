@@ -157,7 +157,6 @@ body {
       }
       
     }
-
     .pokemon__status {
       position: relative;
 
@@ -225,26 +224,24 @@ body {
           }
         }
       }
-      @media(max-width:320px) {
-        margin-top: rem-calc(10);
-
-        .pokemon__names {
-          h1{ 
-            font-size: rem-calc(20);
-          }
+    }
+    @media(max-width:480px) {
+      .pokemon__name {
+        h1{ 
+          font-size: rem-calc(30);
         }
-        .pokemon__status{
-          position: relative;
-          img {
-            position: relative;
-            top: rem-calc(-80);
-            left: rem-calc(0);
-            max-width: rem-calc(100);
-          }
-          &__statistics {
-            min-height: 2vh;
-            padding-top: rem-calc(50);
-          }
+      }
+      .pokemon__status{
+        position: relative;
+        img {
+          position: absolute;
+          top: rem-calc(-80);
+          left: rem-calc(40);
+          width: rem-calc(90);
+        }
+        &__statistics {
+          min-height: 2vh;
+          padding-top: rem-calc(20);
         }
       }
     }

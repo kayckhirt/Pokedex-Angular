@@ -2,29 +2,23 @@
 @import '../../../config-scss/rem-calc.scss';
 $padding: rem-calc(20);
 
-// @media (max-width: 412px) {
-//   .container{
-//     display: grid;
-//     grid-template-columns: repeat(1, auto);
-//     gap: $padding;
-//   }
-// }
 :host {
-  .container{
+  .container {
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: $padding;
     padding: $padding 0;
   }
-  .pokemon {
-      text-decoration: none;
-      border: 2px solid transparent;
-      transition: border-color 0.5s ease;
-      color: black;
 
-      &:hover {
-        border-color:#ef4036;
-      }
+  .pokemon {
+    text-decoration: none;
+    border: 2px solid transparent;
+    transition: border-color 0.5s ease;
+    color: black;
+
+    &:hover {
+      border-color: #ef4036;
+    }
 
     position: relative;
     background: var(--colorBackgroundCard);
@@ -45,15 +39,16 @@ $padding: rem-calc(20);
       ul {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
 
         li {
-          align-items: center;
+          align-items: flex-start;
           background-color: rgba(128, 128, 128, 0.356);
           border-radius: rem-calc(10);
           display: flex;
           font-size: rem-calc(13);
           margin-bottom: rem-calc(5);
-          justify-content: center;
+          justify-content: flex-start;
           width: rem-calc(60);
         }
       }
@@ -80,4 +75,66 @@ $padding: rem-calc(20);
     }
   }
 
+  @media (max-width: 670px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: $padding;
+    }
+
+    a {
+      width: 80%;
+    }
+
+    .pokemon {
+      &__status {
+        h2 {
+          font-size: rem-calc(20);
+          font-weight: 700;
+          font-style: italic;
+          margin-bottom: rem-calc(15);
+        }
+
+        ul {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+
+          li {
+            background-color: rgba(128, 128, 128, 0.356);
+            border-radius: rem-calc(10);
+            display: flex;
+            font-size: rem-calc(13);
+            margin-bottom: rem-calc(5);
+            justify-content: center;
+            width: 100%
+          }
+        }
+      }
+
+      &__image {
+        background: none;
+        width: 50px;
+      }
+    }
+  }
+
+  @media (max-width: 450px) {
+    .container {
+      display: grid;
+      grid-template-columns: repeat(1, auto);
+      gap: $padding;
+    }
+
+    a {
+      width: 88%;
+    }
+
+    .pokemon {
+      &__image {
+        background: none;
+      }
+    }
+  }
 }
