@@ -10,7 +10,7 @@ const routes: Routes = [
 },
   { path: 'details/:id', component: DetailsComponent},
 
-  { path: 'xablau', component: ErrorPageComponent}
+  { path: '**', component: ErrorPageComponent}
 
 ];
 

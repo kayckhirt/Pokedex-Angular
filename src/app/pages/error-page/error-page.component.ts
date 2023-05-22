@@ -9,4 +9,14 @@ import { Component} from '@angular/core';
 
 export class ErrorPageComponent {
 
+
+  public warningMessage:string = 'Por favor, não acorde o Snorlax.';
+
+  hoverMessage(){
+    this.warningMessage = 'Eu avisei...'
+  }
+
+  outMessage(){
+    this.warningMessage = 'Por favor, não acorde o Snorlax.';
+  }
 }
